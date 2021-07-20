@@ -60,8 +60,7 @@ function coingate_link($params)
         'user_agent' => 'CoinGate - WHMCS Extension v' . COINGATE_PLUGIN_VERSION,
     );
 
-    
-
+    logModuleCall('Coingate', 'Check Callback URL', $coingate_params, $coingate_params, json_encode($coingate_params));
 
     $order = \CoinGate\Merchant\Order::createOrFail($coingate_params, array(), $authentication);
 
